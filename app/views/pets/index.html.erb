@@ -1,11 +1,20 @@
-<h1>Pets</h1>
-<ul>
-  <% @pets.each do |pet| %>
-    <li>
-      <%= link_to pet.name, pet_path(pet) %> | found: <%= pet.found_days_ago %> |
-      <%= link_to 'Delete', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-    </li>
-  <% end %>
-</ul>
+<div class='container'>
+  <h1 class='text-center'>Pets</h1>
+  <ul class='list-inline'>
+    <% @pets.each do |pet| %>
+      <li class='list-inline-item'>
+        <div class="card" style="">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to pet.name, pet_path(pet) %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= pet.found_days_ago %></h6>
+            <a href="#" class="card-link">Card link</a>
+            <%= link_to 'Delete', pet_path(pet), class: 'card-link link-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to 'Create a pet', new_pet_path %>
+  <%= link_to 'Create a pet', new_pet_path, class: 'btn btn-primary' %>
+
+</div>
