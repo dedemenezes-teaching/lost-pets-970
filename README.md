@@ -1,24 +1,28 @@
-# README
+## RECAP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### READ
+- read all -> GET | index | .all
+- read one -> GET | show  | .find
 
-Things you may want to cover:
+### CREATE
+- display form -> GET  | new    | .new
+- receive form -> POST | create | .new/save || .create
 
-* Ruby version
+### EDIT
+- display form -> GET   | edit   | .find
+- receive form -> PATCH | update | .update
 
-* System dependencies
+### DELETE
+- delete instance -> DELETE | destroy | .destroy
 
-* Configuration
 
-* Database creation
+# User Stories
 
-* Database initialization
+- DELETE A PET
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+PET MODEL
+- name     - string
+- address  - string
+- species  - string
+- found_on - date

@@ -1,0 +1,11 @@
+<h1>Pets</h1>
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%= link_to pet.name, pet_path(pet) %> | found: <%= pet.found_days_ago %> |
+      <%= link_to 'Delete', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create a pet', new_pet_path %>
